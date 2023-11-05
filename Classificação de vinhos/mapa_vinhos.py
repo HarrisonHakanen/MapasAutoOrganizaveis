@@ -19,7 +19,10 @@ x = normalizador.fit_transform(x);
 #ou seja teremos uma matris de 8 por 8 que equivale a 64.
 #o input_len se refere a quantidade atributos que o dataset possuí.
 som = MiniSom(x = 8,y = 8,input_len=13,sigma=1.0,learning_rate=0.5,random_seed=2);
+
+#Inicializa os pesos
 som.random_weights_init(x);
+
 som.train_random(data=x, num_iteration=100);
 
 pesos = som._weights;
